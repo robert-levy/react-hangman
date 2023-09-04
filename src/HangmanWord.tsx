@@ -1,10 +1,12 @@
-type HangmanWordProps = {
-  guessedLetters: string[]
-  wordToGuess: string
-  reveal?: boolean
-}
+import uuid from "./uuid";
 
-export function HangmanWord({
+type HangmanWordProps = {
+  guessedLetters: string[];
+  wordToGuess: string;
+  reveal?: boolean;
+};
+
+export default function HangmanWord({
   guessedLetters,
   wordToGuess,
   reveal = false,
@@ -20,9 +22,10 @@ export function HangmanWord({
         fontFamily: "monospace",
       }}
     >
-      {wordToGuess.split("").map((letter, index) => (
-        <span style={{ borderBottom: ".1em solid black" }} key={index}>
+      {wordToGuess.split("").map((letter) => (
+        <span style={{ borderBottom: ".1em solid black" }} key={`${uuid()}`}>
           <span
+            data-testid={`hidden-letter-${letter}`}
             style={{
               visibility:
                 guessedLetters.includes(letter) || reveal
@@ -37,5 +40,5 @@ export function HangmanWord({
         </span>
       ))}
     </div>
-  )
+  );
 }

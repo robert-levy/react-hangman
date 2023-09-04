@@ -1,4 +1,4 @@
-import styles from "./Keyboard.module.css"
+import styles from "./Keyboard.module.css";
 
 const KEYS = [
   "a",
@@ -27,14 +27,14 @@ const KEYS = [
   "x",
   "y",
   "z",
-]
+];
 
 type KeyboardProps = {
   disabled?: boolean
   activeLetters: string[]
   inactiveLetters: string[]
   addGuessedLetter: (letter: string) => void
-}
+};
 
 export function Keyboard({
   activeLetters,
@@ -50,9 +50,9 @@ export function Keyboard({
         gap: ".5rem",
       }}
     >
-      {KEYS.map(key => {
-        const isActive = activeLetters.includes(key)
-        const isInactive = inactiveLetters.includes(key)
+      {KEYS.map((key) => {
+        const isActive = activeLetters.includes(key);
+        const isInactive = inactiveLetters.includes(key);
         return (
           <button
             onClick={() => addGuessedLetter(key)}
@@ -64,8 +64,8 @@ export function Keyboard({
           >
             {key}
           </button>
-        )
+        );
       })}
     </div>
-  )
+  );
 }
