@@ -20,7 +20,7 @@ describe("Keyboard component", () => {
 
     const hButton: HTMLButtonElement = screen.getByRole("button", { name: /h/i });
     user.click(hButton);
-
+    
     await waitFor(() => {
       const revealedLetterH = screen.getByTestId("hidden-letter-h");
       expect(revealedLetterH.style.visibility).toBe("visible");
