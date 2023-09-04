@@ -1,10 +1,10 @@
-import uuid from "./uuid";
+import uuid from "./uuid"
 
 type HangmanWordProps = {
-  guessedLetters: string[];
-  wordToGuess: string;
-  reveal?: boolean;
-};
+  guessedLetters: string[]
+  wordToGuess: string
+  reveal?: boolean
+}
 
 export default function HangmanWord({
   guessedLetters,
@@ -40,5 +40,5 @@ export default function HangmanWord({
         </span>
       ))}
     </div>
-  );
+  )
 }
