@@ -17,6 +17,6 @@
     "jsx": "react-jsx"
   },
   "include": ["**/*"],
-  "exclude": ["node_modules", ".eslintrc.cjs", "**/*.config.{js,ts}"],
+  "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
